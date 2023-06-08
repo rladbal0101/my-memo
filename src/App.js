@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import MainPage from "./component/page/MainPage";
+
+const MainTitleText = styled.p`
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  background-color: #6688ff;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <MainTitleText>Memo</MainTitleText>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        {/* <Route path="/memo-write" element={} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
