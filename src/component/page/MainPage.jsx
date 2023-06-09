@@ -17,19 +17,21 @@ const Container = styled.div`
 function MainPage(props) {
   const navigate = useNavigate();
 
+  const { memos, onSubmit, nextId } = props;
+
   return (
     <Wrapper>
       <Container>
         {/* 메모 목록 */}
-        <MemoList />
+        <MemoList memos={memos} onSubmit={onSubmit} nextId={nextId} />
 
         {/* 작성하기 버튼 */}
         <Button
+          title="작성하기"
           onClick={() => {
-            navigate("./");
+            navigate("/memo-write");
           }}
         />
-
       </Container>
     </Wrapper>
   );

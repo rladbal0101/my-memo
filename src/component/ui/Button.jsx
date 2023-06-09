@@ -16,10 +16,11 @@ const StyledButton = styled.button`
 `;
 
 function Button(props) {
-  const { onClick } = props;
+  const { title, onClick } = props;
+
   return (
     <StyledButton onClick={onClick}>
-      버튼
+      {title}
     </StyledButton>
   );
 }
